@@ -57,4 +57,5 @@ func destruct():
 
 
 func _on_Base_body_shape_entered(body_id, body, body_shape, local_shape):
-	destruct()
+	if body.get_name() == "explosion":
+		destruct()

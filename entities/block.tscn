@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scripts/block.gd" type="Script" id=1]
-[ext_resource path="res://images/placeholder.png" type="Texture" id=2]
+[ext_resource path="res://images/grass.png" type="Texture" id=2]
 
-[node name="block" type="RigidBody2D" index="0"]
+[node name="block" type="RigidBody2D"]
 
 input_pickable = false
 collision_layer = 1
