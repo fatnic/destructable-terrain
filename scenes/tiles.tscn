@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://images/grass.png" type="Texture" id=1]
+[ext_resource path="res://images/diamond.png" type="Texture" id=2]
+[ext_resource path="res://images/wood.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -11,9 +13,12 @@ extents = Vector2( 16, 16 )
 
 [node name="grass" type="Sprite" parent="." index="0"]
 
-modulate = Color( 0.65625, 0.123047, 0.123047, 1 )
+position = Vector2( 16, 16 )
 texture = ExtResource( 1 )
 _sections_unfolded = [ "Visibility" ]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="StaticBody2D" type="StaticBody2D" parent="grass" index="0"]
 
@@ -26,6 +31,52 @@ friction = 1.0
 bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="grass/StaticBody2D" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="diamond" type="Sprite" parent="." index="1"]
+
+position = Vector2( 64, 16 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Visibility" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="diamond" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="diamond/StaticBody2D" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="wood" type="Sprite" parent="." index="2"]
+
+position = Vector2( 112, 16 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Visibility" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="wood" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wood/StaticBody2D" index="0"]
 
 shape = SubResource( 1 )
 

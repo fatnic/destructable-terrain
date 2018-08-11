@@ -1,31 +1,48 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scripts/main.gd" type="Script" id=1]
-[ext_resource path="res://fonts/04B_19__.TTF" type="DynamicFontData" id=2]
-[ext_resource path="res://resources/tiles.tres" type="TileSet" id=3]
-[ext_resource path="res://TileMap.gd" type="Script" id=4]
+[ext_resource path="res://resources/tiles.tres" type="TileSet" id=2]
+[ext_resource path="res://scripts/TileMap.gd" type="Script" id=3]
+[ext_resource path="res://fonts/04B_19__.TTF" type="DynamicFontData" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 
 size = 14
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 2 )
+font_data = ExtResource( 4 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="main" type="Node2D"]
+[node name="main" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Pause" ]
 
-[node name="explosion_cooldown" type="Timer" parent="." index="0"]
+[node name="TileMap" type="TileMap" parent="." index="0"]
 
-process_mode = 1
-wait_time = 0.2
-one_shot = false
-autostart = false
+mode = 0
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = true
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 524298, 2, 0, 589829, 1, 0, 589830, 1, 0, 589833, 2, 0, 589834, 2, 0, 589835, 2, 0, 655360, 0, 0, 655361, 0, 0, 655362, 0, 0, 655363, 0, 0, 655364, 0, 0, 655365, 0, 0, 655366, 0, 0, 655367, 0, 0, 655368, 0, 0, 655369, 0, 0, 655370, 0, 0, 655371, 0, 0, 655372, 0, 0, 655373, 0, 0, 655374, 0, 0, 655375, 0, 0, 655376, 0, 0, 655377, 0, 0, 655378, 0, 0, 655379, 0, 0 )
+script = ExtResource( 3 )
+_sections_unfolded = [ "Cell", "Collision" ]
 
-[node name="container" type="Container" parent="." index="1"]
+[node name="destruct_blocks" type="Node2D" parent="." index="1"]
+
+[node name="container" type="Container" parent="." index="2"]
 
 editor/display_folded = true
 anchor_left = 0.0
@@ -63,27 +80,12 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Anchor", "Margin", "custom_fonts" ]
 
-[node name="TileMap" type="TileMap" parent="." index="2"]
+[node name="explosion_cooldown" type="Timer" parent="." index="3"]
 
-mode = 0
-tile_set = ExtResource( 3 )
-cell_size = Vector2( 32, 32 )
-cell_quadrant_size = 16
-cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-cell_half_offset = 2
-cell_tile_origin = 0
-cell_y_sort = false
-cell_clip_uv = false
-collision_use_kinematic = false
-collision_friction = 1.0
-collision_bounce = 0.0
-collision_layer = 1
-collision_mask = 1
-occluder_light_mask = 1
-format = 1
-tile_data = PoolIntArray( 655360, 0, 0, 655361, 0, 0, 655362, 0, 0, 655363, 0, 0, 655364, 0, 0, 655365, 0, 0, 655366, 0, 0, 655367, 0, 0, 655368, 0, 0, 655369, 0, 0, 655370, 0, 0, 655371, 0, 0, 655372, 0, 0, 655373, 0, 0, 655374, 0, 0, 655375, 0, 0, 655376, 0, 0, 655377, 0, 0, 655378, 0, 0, 655379, 0, 0 )
-script = ExtResource( 4 )
-_sections_unfolded = [ "Cell", "Collision" ]
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
 
 [connection signal="timeout" from="explosion_cooldown" to="." method="_on_explosion_cooldown_timeout"]
 

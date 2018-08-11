@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 12.0
+radius = 16.0
 
 [sub_resource type="Animation" id=2]
 
@@ -27,7 +27,7 @@ tracks/0/keys = {
 "values": [ 0, 11 ]
 }
 
-[node name="explosion" type="RigidBody2D" index="0"]
+[node name="explosion" type="RigidBody2D"]
 
 z_index = 100
 input_pickable = false
@@ -40,7 +40,7 @@ bounce = 0.0
 gravity_scale = 0.0
 custom_integrator = false
 continuous_cd = 0
-contacts_reported = 5
+contacts_reported = 10
 contact_monitor = true
 sleeping = false
 can_sleep = false
@@ -50,6 +50,7 @@ angular_velocity = 0.0
 angular_damp = -1.0
 script = ExtResource( 1 )
 _sections_unfolded = [ "Z Index" ]
+explosion_size = 32
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
