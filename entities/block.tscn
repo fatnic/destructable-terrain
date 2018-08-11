@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scripts/grass.gd" type="Script" id=1]
-[ext_resource path="res://images/grass.png" type="Texture" id=2]
+[ext_resource path="res://images/placeholder.png" type="Texture" id=2]
 
-[node name="grass" type="RigidBody2D"]
+[node name="block" type="RigidBody2D"]
 
 input_pickable = false
 collision_layer = 1
@@ -25,6 +25,8 @@ angular_velocity = 0.0
 angular_damp = -1.0
 script = ExtResource( 1 )
 _sections_unfolded = [ "Pickable", "Transform" ]
+min_quad = 2
+default_texture = null
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
@@ -36,7 +38,5 @@ _sections_unfolded = [ "Region", "Transform" ]
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
 [connection signal="body_shape_entered" from="." to="." method="_on_Base_body_shape_entered"]
-
-[connection signal="mouse_entered" from="." to="." method="_on_Base_mouse_entered"]
 
 

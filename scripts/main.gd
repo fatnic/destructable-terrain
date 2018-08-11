@@ -16,9 +16,7 @@ func _process(delta):
 		var bang = bomb.instance()
 		bang.position = get_global_mouse_position()
 		add_child(bang)
-#		var bang = explosion.instance()
-#		bang.position = get_global_mouse_position()
-#		add_child(bang)
+
 
 func _on_explosion_cooldown_timeout():
 	cooldown = false
