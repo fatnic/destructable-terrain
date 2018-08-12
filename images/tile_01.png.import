@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/wood.png-598c6cc72ae6bce77162ab465f2a29cd.stex"
+path="res://.import/tile_01.png-5485586937fb04df2bb46f7e476b5af5.stex"
 
 [deps]
 
-source_file="res://images/wood.png"
-dest_files=[ "res://.import/wood.png-598c6cc72ae6bce77162ab465f2a29cd.stex" ]
+source_file="res://images/tile_01.png"
+dest_files=[ "res://.import/tile_01.png-5485586937fb04df2bb46f7e476b5af5.stex" ]
 
 [params]
 

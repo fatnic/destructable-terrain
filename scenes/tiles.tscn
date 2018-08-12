@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://images/grass.png" type="Texture" id=1]
-[ext_resource path="res://images/diamond.png" type="Texture" id=2]
-[ext_resource path="res://images/wood.png" type="Texture" id=3]
+[ext_resource path="res://images/tile_00.png" type="Texture" id=1]
+[ext_resource path="res://images/tile_06.png" type="Texture" id=2]
+[ext_resource path="res://images/tile_02.png" type="Texture" id=3]
+[ext_resource path="res://images/tile_01.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -13,6 +14,7 @@ extents = Vector2( 16, 16 )
 
 [node name="grass" type="Sprite" parent="." index="0"]
 
+editor/display_folded = true
 position = Vector2( 16, 16 )
 texture = ExtResource( 1 )
 _sections_unfolded = [ "Visibility" ]
@@ -34,8 +36,9 @@ bounce = 0.0
 
 shape = SubResource( 1 )
 
-[node name="diamond" type="Sprite" parent="." index="1"]
+[node name="box" type="Sprite" parent="." index="1"]
 
+editor/display_folded = true
 position = Vector2( 64, 16 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Visibility" ]
@@ -43,7 +46,7 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="StaticBody2D" type="StaticBody2D" parent="diamond" index="0"]
+[node name="StaticBody2D" type="StaticBody2D" parent="box" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -53,12 +56,13 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="diamond/StaticBody2D" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="box/StaticBody2D" index="0"]
 
 shape = SubResource( 1 )
 
-[node name="wood" type="Sprite" parent="." index="2"]
+[node name="grass_left" type="Sprite" parent="." index="2"]
 
+editor/display_folded = true
 position = Vector2( 112, 16 )
 texture = ExtResource( 3 )
 _sections_unfolded = [ "Visibility" ]
@@ -66,7 +70,7 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="StaticBody2D" type="StaticBody2D" parent="wood" index="0"]
+[node name="StaticBody2D" type="StaticBody2D" parent="grass_left" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -76,7 +80,31 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="wood/StaticBody2D" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="grass_left/StaticBody2D" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="grass_right" type="Sprite" parent="." index="3"]
+
+editor/display_folded = true
+position = Vector2( 160, 16 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Visibility" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="grass_right" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="grass_right/StaticBody2D" index="0"]
 
 shape = SubResource( 1 )
 
