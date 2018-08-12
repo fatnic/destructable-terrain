@@ -13,8 +13,8 @@ func _ready():
 	var block_size = $Sprite.region_rect.size.x
 	$CollisionShape2D.shape = RectangleShape2D.new()
 	$CollisionShape2D.shape.extents = Vector2(block_size / 2.0, block_size / 2.0)
-	
-		
+			
+			
 func split_block():
 	
 	var parent_size = $Sprite.region_rect.size.x
@@ -57,5 +57,7 @@ func destruct():
 
 
 func _on_Base_body_shape_entered(body_id, body, body_shape, local_shape):
-	if body.get_name() == "explosion":
+	if body.is_in_group("explosion"):
 		destruct()
+#
+		

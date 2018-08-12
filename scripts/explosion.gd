@@ -11,15 +11,10 @@ func _ready():
 
 func _integrate_forces(state):
 	
-	var found = []
-
 	for i in range(state.get_contact_count()):
 		if state.get_contact_collider_object(i) == tilemap:
 			var hit = tilemap.world_to_map(state.get_contact_local_position(i))
-			found.append(hit)
-	
-	for loc in found:
-		tilemap.replace_tile(loc)
+			tilemap.replace_tile(hit)
 
 
 func _on_AnimationPlayer_animation_finished(anim_name):

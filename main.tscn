@@ -13,7 +13,7 @@ use_filter = false
 font_data = ExtResource( 4 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="main" type="Node2D" index="0"]
+[node name="main" type="Node2D"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Pause" ]
@@ -40,9 +40,9 @@ tile_data = PoolIntArray( 524298, 2, 0, 589829, 1, 0, 589830, 1, 0, 589833, 2, 0
 script = ExtResource( 3 )
 _sections_unfolded = [ "Cell", "Collision" ]
 
-[node name="destruct_blocks" type="Node2D" parent="." index="1"]
+[node name="destruct_blocks" type="Node2D" parent="TileMap" index="0"]
 
-[node name="container" type="Container" parent="." index="2"]
+[node name="container" type="Container" parent="." index="1"]
 
 editor/display_folded = true
 anchor_left = 0.0
@@ -80,10 +80,10 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Anchor", "Margin", "custom_fonts" ]
 
-[node name="explosion_cooldown" type="Timer" parent="." index="3"]
+[node name="explosion_cooldown" type="Timer" parent="." index="2"]
 
 process_mode = 1
-wait_time = 1.0
+wait_time = 0.2
 one_shot = false
 autostart = false
 

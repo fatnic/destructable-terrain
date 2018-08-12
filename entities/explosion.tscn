@@ -27,7 +27,9 @@ tracks/0/keys = {
 "values": [ 0, 11 ]
 }
 
-[node name="explosion" type="RigidBody2D"]
+[node name="explosion" type="RigidBody2D" index="0" groups=[
+"explosion",
+]]
 
 z_index = 100
 input_pickable = false
