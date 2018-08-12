@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Explosion.png-ed12540bb556e838f1ffda67c896bbde.stex"
+path="res://.import/tile_00.png-c28087296850d2c0c92598dad2d31831.stex"
 
 [deps]
 
-source_file="res://images/Explosion.png"
-dest_files=[ "res://.import/Explosion.png-ed12540bb556e838f1ffda67c896bbde.stex" ]
+source_file="res://assets/images/tile_00.png"
+dest_files=[ "res://.import/tile_00.png-c28087296850d2c0c92598dad2d31831.stex" ]
 
 [params]
 

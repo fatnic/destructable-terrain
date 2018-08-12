@@ -3,8 +3,8 @@
 [ext_resource path="res://scripts/main.gd" type="Script" id=1]
 [ext_resource path="res://resources/tiles.tres" type="TileSet" id=2]
 [ext_resource path="res://scripts/TileMap.gd" type="Script" id=3]
-[ext_resource path="res://fonts/04B_19__.TTF" type="DynamicFontData" id=4]
-[ext_resource path="res://label_shadow.gd" type="Script" id=5]
+[ext_resource path="res://assets/fonts/04B_19__.TTF" type="DynamicFontData" id=4]
+[ext_resource path="res://scripts/label_shadow.gd" type="Script" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 
