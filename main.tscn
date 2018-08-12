@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/main.gd" type="Script" id=1]
 [ext_resource path="res://resources/tiles.tres" type="TileSet" id=2]
 [ext_resource path="res://scripts/TileMap.gd" type="Script" id=3]
 [ext_resource path="res://fonts/04B_19__.TTF" type="DynamicFontData" id=4]
+[ext_resource path="res://label_shadow.gd" type="Script" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -13,10 +14,10 @@ use_filter = false
 font_data = ExtResource( 4 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="main" type="Node2D"]
+[node name="main" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
-_sections_unfolded = [ "Pause" ]
+_sections_unfolded = [ "Pause", "Transform" ]
 
 [node name="TileMap" type="TileMap" parent="." index="0"]
 
@@ -29,22 +30,19 @@ cell_half_offset = 2
 cell_tile_origin = 0
 cell_y_sort = false
 cell_clip_uv = false
-collision_use_kinematic = true
+collision_use_kinematic = false
 collision_friction = 1.0
 collision_bounce = 0.0
 collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( 524298, 2, 0, 589829, 1, 0, 589830, 1, 0, 589833, 2, 0, 589834, 2, 0, 589835, 2, 0, 655360, 0, 0, 655361, 0, 0, 655362, 0, 0, 655363, 0, 0, 655364, 0, 0, 655365, 0, 0, 655366, 0, 0, 655367, 0, 0, 655368, 0, 0, 655369, 0, 0, 655370, 0, 0, 655371, 0, 0, 655372, 0, 0, 655373, 0, 0, 655374, 0, 0, 655375, 0, 0, 655376, 0, 0, 655377, 0, 0, 655378, 0, 0, 655379, 0, 0 )
+tile_data = PoolIntArray( 458753, 1, 0, 524288, 0, 0, 524289, 1, 0, 524298, 2, 0, 524299, 2, 0, 524300, 2, 0, 524304, 2, 0, 524307, 0, 0, 589824, 0, 0, 589825, 0, 0, 589828, 1, 0, 589829, 1, 0, 589830, 1, 0, 589833, 2, 0, 589834, 2, 0, 589835, 2, 0, 589836, 2, 0, 589837, 2, 0, 589840, 2, 0, 589842, 0, 0, 589843, 0, 0, 655360, 0, 0, 655361, 0, 0, 655362, 0, 0, 655363, 0, 0, 655364, 0, 0, 655365, 0, 0, 655366, 0, 0, 655367, 0, 0, 655368, 0, 0, 655369, 0, 0, 655370, 0, 0, 655371, 0, 0, 655372, 0, 0, 655373, 0, 0, 655374, 0, 0, 655375, 0, 0, 655376, 0, 0, 655377, 0, 0, 655378, 0, 0, 655379, 0, 0 )
 script = ExtResource( 3 )
-_sections_unfolded = [ "Cell", "Collision" ]
-
-[node name="destruct_blocks" type="Node2D" parent="TileMap" index="0"]
+_sections_unfolded = [ "Cell", "Collision", "Transform" ]
 
 [node name="container" type="Container" parent="." index="1"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -55,6 +53,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+_sections_unfolded = [ "Anchor" ]
 
 [node name="label" type="Label" parent="container" index="0"]
 
@@ -62,7 +61,7 @@ anchor_left = 0.5
 anchor_top = 0.0
 anchor_right = 0.5
 anchor_bottom = 0.0
-margin_top = 10.0
+margin_top = 25.0
 margin_right = 163.0
 margin_bottom = 58.0
 rect_pivot_offset = Vector2( 0, 0 )
@@ -79,6 +78,34 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Anchor", "Margin", "custom_fonts" ]
+
+[node name="label_shadow" type="Label" parent="container/label" index="0"]
+
+modulate = Color( 0.136719, 0.104675, 0.104675, 1 )
+show_behind_parent = true
+anchor_left = 0.5
+anchor_top = 0.0
+anchor_right = 0.5
+anchor_bottom = 0.0
+margin_left = -94.0
+margin_top = 2.0
+margin_right = 98.0
+margin_bottom = 35.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+text = "Destructable terrain demo
+Click to drop a bomb"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+script = ExtResource( 5 )
+_sections_unfolded = [ "Anchor", "Margin", "Visibility", "custom_fonts" ]
 
 [node name="explosion_cooldown" type="Timer" parent="." index="2"]
 

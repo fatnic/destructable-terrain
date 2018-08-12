@@ -15,6 +15,6 @@ func replace_tile(tile):
 		b.get_node("Sprite").texture = tile_set.tile_get_texture(current_tile)
 		b.position.x = map_to_world(tile).x + cell_size.x / 2
 		b.position.y = map_to_world(tile).y + cell_size.x / 2
-		$destruct_blocks.add_child(b)
+		add_child(b)
 
 		replaced.append(tile)
