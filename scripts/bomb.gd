@@ -15,3 +15,7 @@ func bang():
 
 func _on_bomb_body_entered(body):
 	bang()
+
+
+func _on_VisibilityNotifier2D_screen_exited():
+	queue_free()

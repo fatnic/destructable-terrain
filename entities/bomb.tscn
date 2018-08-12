@@ -9,7 +9,7 @@ custom_solver_bias = 0.0
 radius = 1.85004
 height = 7.83796
 
-[node name="bomb" type="RigidBody2D"]
+[node name="bomb" type="RigidBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 2
@@ -42,6 +42,12 @@ _sections_unfolded = [ "Transform" ]
 
 shape = SubResource( 1 )
 
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="." index="2"]
+
+rect = Rect2( -10, -10, 20, 20 )
+
 [connection signal="body_entered" from="." to="." method="_on_bomb_body_entered"]
+
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
 
 
