@@ -5,7 +5,7 @@
 [sub_resource type="StreamTexture" id=1]
 
 flags = 0
-load_path = "res://.import/placeholder.png-33acabd1c6a874157a7acc8db0933596.stex"
+load_path = ""
 
 [node name="block" type="RigidBody2D"]
 
@@ -18,7 +18,7 @@ friction = 1.0
 bounce = 0.0
 gravity_scale = 0.0
 custom_integrator = false
-continuous_cd = 2
+continuous_cd = 0
 contacts_reported = 4
 contact_monitor = true
 sleeping = true

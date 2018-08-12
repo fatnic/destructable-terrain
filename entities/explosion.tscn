@@ -33,7 +33,7 @@ tracks/0/keys = {
 
 z_index = 100
 input_pickable = false
-collision_layer = 1
+collision_layer = 4
 collision_mask = 1
 mode = 3
 mass = 1.0
@@ -51,7 +51,7 @@ linear_damp = -1.0
 angular_velocity = 0.0
 angular_damp = -1.0
 script = ExtResource( 1 )
-_sections_unfolded = [ "Z Index" ]
+_sections_unfolded = [ "Collision", "Z Index" ]
 explosion_size = 32
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
