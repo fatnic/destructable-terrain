@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scripts/main.gd" type="Script" id=1]
 [ext_resource path="res://resources/tiles.tres" type="TileSet" id=2]
 [ext_resource path="res://scripts/TileMap.gd" type="Script" id=3]
 [ext_resource path="res://assets/fonts/04B_19__.TTF" type="DynamicFontData" id=4]
-[ext_resource path="res://scripts/label_shadow.gd" type="Script" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -14,7 +13,7 @@ use_filter = false
 font_data = ExtResource( 4 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="main" type="Node2D"]
+[node name="main" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Pause", "Transform" ]
@@ -71,41 +70,17 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 0.405137 )
+custom_constants/shadow_offset_x = 2
+custom_constants/shadow_offset_y = 2
+custom_constants/shadow_as_outline = 0
 text = "Destructable terrain demo
 Click to drop a bomb"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Anchor", "Margin", "custom_fonts" ]
-
-[node name="label_shadow" type="Label" parent="container/label" index="0"]
-
-modulate = Color( 0.136719, 0.104675, 0.104675, 1 )
-show_behind_parent = true
-anchor_left = 0.5
-anchor_top = 0.0
-anchor_right = 0.5
-anchor_bottom = 0.0
-margin_left = -94.0
-margin_top = 2.0
-margin_right = 98.0
-margin_bottom = 35.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_fonts/font = SubResource( 1 )
-text = "Destructable terrain demo
-Click to drop a bomb"
-align = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-script = ExtResource( 5 )
-_sections_unfolded = [ "Anchor", "Margin", "Visibility", "custom_fonts" ]
+_sections_unfolded = [ "Anchor", "Margin", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
 
 [node name="explosion_cooldown" type="Timer" parent="." index="2"]
 
