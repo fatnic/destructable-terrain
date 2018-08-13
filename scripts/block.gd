@@ -2,14 +2,10 @@ extends RigidBody2D
 
 var block = preload("res://entities/block.tscn")
 
-export (int, 2, 16) var min_quad = 2
-export (Texture) var default_texture
+export (int, 2, 16) var min_quad = 4
 
 func _ready():
 	
-	if default_texture:
-		$Sprite.texture = default_texture
-		
 	var block_size = $Sprite.region_rect.size.x
 	$CollisionShape2D.shape = RectangleShape2D.new()
 	$CollisionShape2D.shape.extents = Vector2(block_size / 2.0, block_size / 2.0)

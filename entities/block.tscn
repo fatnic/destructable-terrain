@@ -7,7 +7,7 @@
 flags = 0
 load_path = ""
 
-[node name="block" type="RigidBody2D"]
+[node name="block" type="RigidBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -30,7 +30,6 @@ angular_damp = -1.0
 script = ExtResource( 1 )
 _sections_unfolded = [ "Pickable", "Transform" ]
 min_quad = 4
-default_texture = null
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 

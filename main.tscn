@@ -13,12 +13,14 @@ use_filter = false
 font_data = ExtResource( 4 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="main" type="Node2D" index="0"]
+[node name="main" type="Node2D"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Pause", "Transform" ]
 
-[node name="TileMap" type="TileMap" parent="." index="0"]
+[node name="destructable" type="TileMap" parent="." index="0" groups=[
+"destructable",
+]]
 
 mode = 0
 tile_set = ExtResource( 2 )
@@ -40,7 +42,28 @@ tile_data = PoolIntArray( 196618, 1, 0, 196619, 1, 0, 262153, 2, 0, 262154, 0, 0
 script = ExtResource( 3 )
 _sections_unfolded = [ "Cell", "Collision", "Transform" ]
 
-[node name="container" type="Container" parent="." index="1"]
+[node name="non_destructable" type="TileMap" parent="." index="1"]
+
+mode = 0
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 196621, 4, 0, 589824, 4, 0, 589834, 4, 0, 589835, 4, 0, 589842, 4, 0 )
+_sections_unfolded = [ "Cell" ]
+
+[node name="container" type="Container" parent="." index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -82,7 +105,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Anchor", "Margin", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
 
-[node name="explosion_cooldown" type="Timer" parent="." index="2"]
+[node name="explosion_cooldown" type="Timer" parent="." index="3"]
 
 process_mode = 1
 wait_time = 0.2
