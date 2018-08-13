@@ -22,25 +22,25 @@ func split_block():
 	nw.position = Vector2(position.x - (parent_size / 4), position.y - (parent_size / 4))
 	nw.get_node("Sprite").texture = parent_texture
 	nw.get_node("Sprite").region_rect = Rect2(Vector2(tex_off.x, tex_off.y), Vector2(block_size, block_size))
-	get_tree().get_root().add_child(nw)
+	get_parent().add_child(nw)
 	
 	var ne = block.instance()
 	ne.position = Vector2(position.x + (parent_size / 4), position.y - (parent_size / 4))
 	ne.get_node("Sprite").texture = parent_texture
 	ne.get_node("Sprite").region_rect = Rect2(Vector2(tex_off.x + block_size, tex_off.y), Vector2(block_size, block_size))
-	get_tree().get_root().add_child(ne)
+	get_parent().add_child(ne)
 	
 	var sw = block.instance()
 	sw.position = Vector2(position.x - (parent_size / 4), position.y + (parent_size / 4))
 	sw.get_node("Sprite").texture = parent_texture
 	sw.get_node("Sprite").region_rect = Rect2(Vector2(tex_off.x, tex_off.y + block_size), Vector2(block_size, block_size))
-	get_tree().get_root().add_child(sw)
+	get_parent().add_child(sw)
 	
 	var se = block.instance()
 	se.position = Vector2(position.x + (parent_size / 4), position.y + (parent_size / 4))
 	se.get_node("Sprite").texture = parent_texture
 	se.get_node("Sprite").region_rect = Rect2(Vector2(tex_off.x + block_size, tex_off.y + block_size), Vector2(block_size, block_size))
-	get_tree().get_root().add_child(se)
+	get_parent().add_child(se)
 
 	queue_free()
 
