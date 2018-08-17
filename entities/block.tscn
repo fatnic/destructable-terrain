@@ -7,7 +7,7 @@
 flags = 0
 load_path = ""
 
-[node name="block" type="RigidBody2D"]
+[node name="block" type="RigidBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
