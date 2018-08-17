@@ -1,8 +1,8 @@
 extends RigidBody2D
 
-var block = preload("res://entities/block.tscn")
+var block = load("res://entities/block.tscn")
 
-export (int, 2, 16) var min_quad = 4
+export (int) var min_quad = 4
 
 func _ready():
 	
