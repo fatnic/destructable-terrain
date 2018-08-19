@@ -15,7 +15,6 @@ extents = Vector2( 16, 16 )
 
 [node name="grass" type="Sprite" parent="." index="0"]
 
-editor/display_folded = true
 position = Vector2( 16, 16 )
 texture = ExtResource( 1 )
 _sections_unfolded = [ "Visibility" ]
@@ -40,6 +39,7 @@ shape = SubResource( 1 )
 
 [node name="box" type="Sprite" parent="." index="1"]
 
+editor/display_folded = true
 position = Vector2( 64, 16 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Visibility" ]
